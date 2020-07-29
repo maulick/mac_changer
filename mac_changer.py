@@ -31,4 +31,10 @@ def get_currnet_mac(interface):
 args = get_arguments()
 current_mac = get_current_mac(args.interface)
 print("Current MAC = " + str(current_mac))
-#change_mac(args.interface, args.new_mac)
+change_mac(args.interface, args.new_mac)
+
+current_mac = get_current_mac(args.interface)
+if current_mac == options.new_mac:
+    print("[+] MAC address was successfully changed to " + current_mac)
+else:
+    print("[-] MAC address did not get changed.")
